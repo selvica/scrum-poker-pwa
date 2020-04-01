@@ -1,0 +1,26 @@
+// HELPERS
+@import "helpers/mixins";
+@import "helpers/variables";
+@import "helpers/keyframes.scss";
+@import "helpers/helpers";
+
+// BASE
+@import "base/reset";
+@import "base/typography";
+
+// COMPONETS
+@import "componets/buttons";
+@import "componets/carousel";
+@import "componets/navigation";
+
+// LAYOUT
+@import "layout/containers";
+
+// PAGES
+@import "pages/home";
+
+// THEMES
+@import "themes/theme";
+
+//VENDORS
+@import "vendors/bootstrap/bootstrap";

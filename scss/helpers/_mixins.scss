@@ -1,0 +1,12 @@
+// TRANSITIONS
+@mixin border-radius() {
+	-webkit-border-radius: 5px;
+	   -moz-border-radius: 5px;
+			border-radius: 5px;
+}
+@mixin base-trasition() {
+	-webkit-transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+	   -moz-transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+			transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+

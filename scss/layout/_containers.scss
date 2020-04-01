@@ -1,0 +1,30 @@
+.app {
+	background-color: $default-grey;
+	&.darkMode {
+		background-color: $default-black;
+		//filter: invert(1);
+	}
+}
+.body-padding {
+	padding: 3%;
+}
+.app-container {
+	max-width: 600px;
+	margin: 0 auto;
+	position: relative;
+	padding: 1%;
+	overflow: hidden;
+	background-color: $light-grey;
+	.default-container {
+		background-color: $white;
+		margin: 20% auto;
+	    padding: 5%;
+		@include border-radius;
+		h1,
+		h2,
+		h3,
+		h4 {
+			text-align: center;
+		}
+	}
+}

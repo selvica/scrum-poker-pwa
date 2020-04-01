@@ -1,0 +1,19 @@
+//IMPORTS
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+
+// FONT VARIABLES
+$header-font: 'Bebas Neue', cursive;
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: $header-font;
+}
+p,
+ul,
+li {
+	line-height: 1.5;
+	font-family: Arial, san-serif;
+	color: $base-grey;
+}

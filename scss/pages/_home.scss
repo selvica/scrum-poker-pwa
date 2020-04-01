@@ -1,0 +1,210 @@
+.deck-container {
+	background: $white url('../img/default-bg.jpg') no-repeat center;
+	background-size: cover;
+	#deck {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		height: 99vh;
+		overflow: auto;
+		background-color: #0000005e;
+		.player-card {
+			flex-basis: 80px;
+			margin: 0 4%;
+			background-color: $company-green;
+			display: flex;
+			align-items: center;
+	    	justify-content: center;
+			@include border-radius;
+			border: 2px solid $light-grey;
+			cursor: pointer;
+			filter: opacity(0.9);
+			.card-content {
+				color: $white;
+				font-family: $header-font;
+				text-align: center;
+				font-size: 50px;
+				margin: auto;
+				padding: 15% 0;
+				filter: opacity(1);
+			}
+			@media screen and (min-width: 768px) {
+				flex-basis: 120px;
+				margin: 0 2%;
+				.card-content {
+					padding: 40% 0;
+				}
+			}
+			@media screen and (min-width: 1200px) {
+				 margin: 4%;
+				.card-content {
+					padding: 22% 0;
+				}
+			}
+		}
+	}
+	.selected-card-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		background-color: $light-grey;
+		display: flex;
+		visibility: hidden;
+		opacity: 0;
+		z-index: 11;
+		@include base-trasition;
+		.selected-card {
+			flex-basis: 100%;
+			margin: 2%;
+			background-color: $company-green;
+			display: flex;
+			align-items: center;
+	    	justify-content: center;
+			border-radius: 5px;
+			border: 2px solid $light-grey;
+			cursor: pointer;
+			.selected-card-content {
+				color: $white;
+				font-family: $header-font;
+				text-align: center;
+				font-size: 250px;
+				margin: auto;
+			}
+		}
+		&.active {
+			visibility: visible;
+			opacity: 1;
+		}
+	}
+}
+.rules-container,
+.settings-container {
+	background-color: $white;
+	position: absolute;
+	left: 0;
+	margin: 1%;
+	padding: 10%;
+	height: 100vh;
+	z-index: 20;
+	@include border-radius;
+	@include base-trasition;
+	h2 {
+		text-align: center;
+	}
+}
+.rules-container {
+	visibility: hidden;
+	opacity: 0;
+	top:0;
+	overflow: initial;
+	.rules-content {
+		height: 100%;
+		overflow: auto;
+	}
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.settings-container {
+	z-index: 20;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	bottom: -100%;
+	visibility: hidden;
+	opacity: 0;
+	@include base-trasition;
+	ul {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		flex-basis: 100%;
+		flex-direction: column;
+		li {
+			line-height: 45px;
+			padding: 2%;
+			border-bottom: 1px solid $light-grey;
+			font-size: 18px;
+			i {
+				font-size: 40px;
+				float: right;
+				transform: rotate(180deg);
+			}
+			&.on {
+				i {
+					color: #5bd963;
+					transform: rotate(0);
+				}
+			}
+		}
+	}
+	&.active {
+		bottom: 0;
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.share-url {
+	display: none;
+}
+
+// DARK MODE CUSTOM STYLES
+.darkMode {
+	.deck-container {
+		background: $light-grey url('../img/darkmode-space.png') no-repeat center;
+		#deck {
+			.player-card {
+				background-color: $black;
+			}
+		}
+		.selected-card-container {
+			.selected-card {
+				background-color: $black;
+			}
+		}
+	}
+	.rules-container {
+		filter: invert(1);
+	}
+	.settings-container {
+	    filter: invert(1);
+		ul {
+			li.on {
+				i {
+					filter: invert(1);
+				}
+			}
+		}
+	}
+}
+// T-SHIRT SIZES 
+.tee {
+	.deck-container {
+		#deck {
+			.player-card {
+				flex-basis: 130px;
+				.card-content {
+					padding: 40% 0;
+				}
+			}
+		}
+	}
+}
+.credit {
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    display: block;
+    padding: 1% 0;
+	a {
+		text-transform: uppercase;
+		font-size: 8px;
+		color: $default-grey;
+		letter-spacing: 3px;
+	}
+}
